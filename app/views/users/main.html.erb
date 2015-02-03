@@ -14,7 +14,17 @@
 				<% end %>
 			</div>
 		</div>
-	</row>
+	</div>
+	<div class='row'>
+	<% if flash[:errors] %>
+		<% flash[:errors].each do |err| %>
+			<p><%= err[0] + ' ' %>
+				<% err[1].each do |part| %>
+				<%= part + '. ' %> </p>
+			<% end %>
+		<% end %>
+	<% end %>
+	</div>
 	<div class='row'>
 		<div class='c6 o3'>
 			<div class='top text-center'>

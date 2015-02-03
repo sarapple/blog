@@ -4,10 +4,13 @@ class UsersController < ApplicationController
 	end
 	def create
 		@newUser = User.new (user_params)
-		@newUser.save!
-		# rescue ActiveRecord::RecordInvalid
-		# logger.error($!.to_s)
-		redirect 'users/main'
+		@newUser.valid?
+		if @newUser.errors
+			flash[:errors] = @newUser.errors.messages
+		else 
+			@newUser.save
+		end
+		redirect_to '/'
 	end
 	def user_params
 		params.require(:user).permit(:username, :password, :email)
