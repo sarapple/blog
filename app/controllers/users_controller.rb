@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 		@newUser.save!
 		rescue ActiveRecord::RecordInvalid
 		logger.error($!.to_s)
-		redirect to 'users/main'
+		redirect 'users/main'
 	end
 	def user_params
 		params.require(:user).permit(:username, :password, :email)
