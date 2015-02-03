@@ -1,0 +1,38 @@
+<div>
+	<h1>You are in the Main!</h1>
+	<p>Hello main</p>
+	<% @allUsers.each do | person | %>
+	<p><%=person.first_name%></p>
+	<p><%=person.last_name%></p>
+	<% end %>
+	<a href='/users/new'>Add New</a>
+</div>
+<div class='container'>
+	<div class='row'>
+		<div class='c6 o3'>
+			<div class='top text-center'>
+				<h1 class='display-inline-block'>Create New User</h1>
+			</div>
+			<div class='c6 o3 margin-top margin-bottom'>
+				<form action='/users/' method='post'>
+					<h4 class='form-header text-center'>User Information</h4>
+					<h5 class='form-text padding-left color-gray'>First Name</h5>
+					<label>
+						<input class='hundred' type='text' name='user[username]' placeholder='First Name' />
+					</label>
+					<h5 class='form-text padding-left color-gray'>Last Name</h5>
+					<label>
+						<input class='hundred' type='text' name='user[password]' placeholder='Last Name' />
+					</label>
+					<label>
+						<input class='hundred' type='text' name='user[email]' placeholder='Last Name' />
+					</label>
+					<label>
+						<input class='hundred' type='submit' value='Create' />
+					</label>
+					<%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
