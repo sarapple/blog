@@ -18,10 +18,10 @@
 	<div class='row'>
 	<% if flash[:errors] %>
 		<% flash[:errors].each do |err| %>
-			<p><%= err[0] + ' ' %>
-				<% err[1].each do |part| %>
-				<%= part + '. ' %> </p>
-			<% end %>
+			<p><%=  err[0] + ' ' %>
+				<%  part = err[1] %>
+				<%= part[0] + '. ' %> 
+			</p>
 		<% end %>
 	<% end %>
 	</div>

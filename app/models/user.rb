@@ -3,8 +3,13 @@ class User < ActiveRecord::Base
   		self.admin = 'false'
   	end
 	email_regex = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]+)\z/i
-	validates :username, :password, presence: true, length: { in: 2..8 }
+	validates 	:username, 		:presence 	=> true,
+								:uniqueness => { :case_sensitive => false },
+								:length 	=> { in: 2..12 }
+	validates 	:password, 		:presence	=> true, 
+								:length		=> { in: 8..16 }
 	validates 	:email,			:presence	=> true,
-								:format		=> { :with => email_regex },
-	       						:uniqueness => { :case_sensitive => false }
+								:uniqueness => { :case_sensitive => false },
+								:format		=> { :with => email_regex }
+	       						
 end
