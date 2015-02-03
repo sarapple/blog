@@ -5,11 +5,8 @@ class UsersController < ApplicationController
 	def create
 		@newUser = User.new (user_params)
 		@newUser.save!
-		puts *********
-		puts @newUser.to_s
-		puts *********
-		rescue ActiveRecord::RecordInvalid
-		logger.error($!.to_s)
+		# rescue ActiveRecord::RecordInvalid
+		# logger.error($!.to_s)
 		redirect 'users/main'
 	end
 	def user_params
