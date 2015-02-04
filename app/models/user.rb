@@ -5,10 +5,10 @@ class User < ActiveRecord::Base
 	validates 	:username, 		:presence 	=> true,
 								:uniqueness => { :case_sensitive => false },
 								:length 	=> { in: 2..12 }
-	before_save do
-  		self.admin = 'false'
-  	end
 	validates 	:password, 		:length		=> { in: 8..16 }
 	validates 	:email,			:presence	=> true,
 								:format		=> { :with => email_regex } 
+	before_save do
+  		self.admin = 'false'
+  	end
 end

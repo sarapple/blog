@@ -5,9 +5,25 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+<% content_for :jquery_code do %>
+<script type='text/javascript'>
+console.log('hello');
+$(document).ready(function()
+	{
+		$(document).on('click', '.login-button', function(){
+			$('.form-switch').html("<%= escape_javascript(render :partial => 'loginform' )%>");
+		});
+		$(document).on('click', '.reg-button', function(){
+			$('.form-switch').html("<%= escape_javascript(render :partial => 'regform' )%>");
+		});
+});
+console.log('hi');
+</script>
+<% end %>
 </head>
 <body>
 
+<%= yield :jquery_code %>
 <%= yield %>
 
 </body>

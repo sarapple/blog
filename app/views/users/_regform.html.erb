@@ -1,0 +1,23 @@
+<form class='regform' action='/users/create' method='post'>
+	<h4 class='form-header text-center'>Register</h4>
+	<h5 class='form-text padding-left color-gray'>Username</h5>
+	<label>
+		<input class='hundred' type='text' name='user[username]' placeholder='First Name' />
+	</label>
+	<h5 class='form-text padding-left color-gray'>Password</h5>
+	<label>
+		<input class='hundred' type='text' name='user[password]' placeholder='Password' />
+	</label>
+	<h5 class='form-text padding-left color-gray'>Confirm Password</h5>
+	<label>
+		<input class='hundred' type='text' name='user[password_confirmation]' placeholder='password confirm' />
+	</label>
+	<h5 class='form-text padding-left color-gray'>Email</h5>
+	<label>
+		<input class='hundred' type='text' name='user[email]' placeholder='Email' />
+	</label>
+	<label>
+		<input class='hundred' type='submit' value='Create' />
+	</label>
+	<%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
+</form>

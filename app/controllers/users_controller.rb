@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 		@allUsers = User.all
 	end
 	def create
-		@newUser = User.new (user_params)
+		@newUser = User.new (reg_params)
 		if @newUser.valid?
 			@newUser.save
 		else 
@@ -11,7 +11,19 @@ class UsersController < ApplicationController
 		end
 		redirect_to '/'
 	end
-	def user_params
+	def login
+		@returnUser = User.new (login_params)
+		puts params[:returnUser]['username']
+		puts params[:returnUser]['password']
+		result = User.find_by(username: params[:returnUser]['username']).try(:authenticate, params[:returnUser]['password']) 
+		if result 
+			session[:id] = result.id
+		end
+	end
+	def reg_params
 		params.require(:user).permit(:username, :email, :password, :password_confirmation)
+	end
+	def login_params
+		params.require(:returnUser).permit(:username, :password)
 	end
 end
