@@ -1,5 +1,6 @@
 require 'bcrypt'
 class User < ActiveRecord::Base
+	has_many :posts
 	has_secure_password
 	email_regex = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]+)\z/i
 	validates 	:username, 		:presence 	=> true,

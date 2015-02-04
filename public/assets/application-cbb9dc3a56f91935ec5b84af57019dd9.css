@@ -1,3 +1,109 @@
+.header-bottom {
+	min-height: 2em;
+}
+.form-post {
+	border-radius: 1em;
+}
+input[type="textarea"]{
+	height: 12em;
+}
+input[type="submit"]{
+	background-color: RGB(66, 152, 181);
+}
+.form-border {
+	border: 1px solid black;
+}
+.bg-color-chinook {
+	background-color: RGB(74, 170, 165);
+}
+.bg-color-darkgray {
+	background-color: RGB(53, 64, 79);
+}
+.bg-cyan {
+	background-color: RGB(77, 194, 182);
+}
+.form-post {
+	border: 2px solid gray;
+}
+.header-nav {
+	color: RGB(91, 91, 91);
+	font-size: 2em;
+	background-color: RGB(238, 238, 238);
+	border-bottom: 1px solid RGB(53, 64, 79);
+}
+	.header-nav button {
+		color: RGB(91, 91, 91);
+		margin-right: 1em;
+		margin-left: 1em;
+		background-color: RGB(238, 238, 238);
+	}
+	.header-nav a {
+		color: RGB(91, 91, 91);
+		margin-right: 1em;
+		margin-left: 1em;
+	}
+.eachpost {
+	padding: 1.5em;
+}
+	.eachpost:nth-child(1) {
+		background-color: RGB(228, 95, 86);
+		color: white;
+	}
+	.eachpost:nth-child(2n){
+		background-color: RGB(163, 211, 156);
+		color: RGB(243, 134, 48);
+	}
+	.eachpost .info {
+		font-size: 1em;
+	}
+	.eachpost .title {
+		color: RGB(91, 91, 91);
+		padding-top: .5em;
+		padding-bottom: .5em;
+		font-size: 2em;
+		border-bottom: .1em solid RGB(159, 156, 147);
+	}
+	.eachpost .content {
+		padding-top: .5em;
+		font-size: 2.5em;
+	}
+.form-comment {
+	background: none;
+}
+	.form-comment input[type="submit"]{
+		display: none;
+	}
+.loginform * {
+	margin-top: 1.5em;
+	margin-bottom: 1.5em;
+}
+	.loginform input[type=submit] {
+		margin-top: 2.4em;
+		margin-bottom: .6em;
+	}
+.regform * {
+	margin-top: .5em;
+	margin-bottom: .5em;
+}
+input {
+	width: 80%;
+	margin-left: 10%;
+	margin-right: 10%;
+}
+#login {
+	background-color: RGB(66, 95, 118);
+	border-top-left-radius: .5em;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	padding-left: 1px;
+}
+#register {
+	background-color: RGB(204, 204, 204);
+	border-top-right-radius: .5em;
+	padding-top: 1em;
+	padding-bottom: 1em;	
+	padding-right: 1px;
+}
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -10,11 +116,12 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
- *= require_self
+
+
  */
 /*** CSS GLOBAL RESETS ***/
 /* BEGIN CSS RESETS --> */
+
 html {
   	-webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;

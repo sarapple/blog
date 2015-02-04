@@ -1,0 +1,31 @@
+.loginform * {
+	margin-top: 1.5em;
+	margin-bottom: 1.5em;
+}
+	.loginform input[type=submit] {
+		margin-top: 2.4em;
+		margin-bottom: .6em;
+	}
+.regform * {
+	margin-top: .5em;
+	margin-bottom: .5em;
+}
+input {
+	width: 80%;
+	margin-left: 10%;
+	margin-right: 10%;
+}
+#login {
+	background-color: RGB(66, 95, 118);
+	border-top-left-radius: .5em;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	padding-left: 1px;
+}
+#register {
+	background-color: RGB(204, 204, 204);
+	border-top-right-radius: .5em;
+	padding-top: 1em;
+	padding-bottom: 1em;	
+	padding-right: 1px;
+}

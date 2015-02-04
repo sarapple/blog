@@ -18,6 +18,8 @@ class UsersController < ApplicationController
 		result = User.find_by(username: params[:returnUser]['username']).try(:authenticate, params[:returnUser]['password']) 
 		if result 
 			session[:id] = result.id
+			session[:username] = result.username
+			redirect_to "/posts/index"
 		end
 	end
 	def reg_params

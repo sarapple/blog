@@ -1,15 +1,6 @@
 <form class='loginform' action='/users/login' method='post'>
-	<h4 class='form-header text-center'>Login</h4>
-	<h5 class='form-text padding-left color-gray'>Username</h5>
-	<label>
-		<input class='hundred' type='text' name='returnUser[username]' placeholder='First Name' />
-	</label>
-	<h5 class='form-text padding-left color-gray'>Password</h5>
-	<label>
-		<input class='hundred' type='text' name='returnUser[password]' placeholder='Password' />
-	</label>
-	<label>
-		<input class='hundred' type='submit' value='Login' />
-	</label>
+	<input type='text' name='returnUser[username]' placeholder='Username' />
+	<input type='text' name='returnUser[password]' placeholder='Password' />
+	<input type='submit' value='Login' />
 	<%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
 </form>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blog</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+<% content_for :jquery_code do %>
+<script type='text/javascript'>
+$(document).ready(function(){
+	console.log('hello');
+});
+</script>
+<% end %>
+</head>
+<body>
+	<div class='container'>
+			<div class='row'>
+				<div class='c12'>
+					<h2 class='bg-grainy-gray color-white text-center'><%= session[:username]%></h2>
+				</div>
+			</div>
+			<div class='row'>
+				<div class='c12 header-nav'>
+					<div class='c10'>
+						<button class='allPosts'>All posts</button>
+						<button class='myPosts'>My Feed</button>
+					</div>
+					<div class='c2'>
+						<a href='logout'>Log Out</a>
+					</div>
+				</div>
+			</div>
+<%= yield :jquery_code %>
+<%= yield %>
+	</div>
+</body>
+</html>
