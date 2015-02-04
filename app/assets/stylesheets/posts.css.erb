@@ -2,6 +2,7 @@
 	margin-top: 2em;
 	min-height: 10em;
 }
+//= depend_on_asset "grayish.jpg"
 .bg-grainy-gray {
 	background-image: url('<%= asset_path("grayish.jpg") %> ');
 	background-repeat: no-repeat;
@@ -107,10 +108,7 @@ input[type="submit"]{
 	.form-comment input[type="submit"]{
 		display: none;
 	}
-/*//= depend_on_asset "poly.png"*/
-/*.container {
-	background-image: url('<%= asset_path("poly.jpg") %> ');
-}*/
+//= depend_on_asset "poly.png"
 body {
 	background-image: url('<%= asset_path("poly.jpg") %> ');
     background-repeat: no-repeat;
