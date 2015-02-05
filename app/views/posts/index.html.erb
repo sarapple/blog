@@ -17,23 +17,34 @@
 	</div>
 </div>
 <div class='row'>
-	<% @allposts.each do |p| %>
-	<div class='c12 eachpost'>
-		<div class='c10 o1 comment'>
-			<p class='info'><%= p.username %> | <%= p.created_at %></p>
-			<p class='title'><%= p.title %></h4>
-			<p class='content'><%= p.content %></p>
-			<div class='c6 o3 message'>				
-				<form class='form-comment' action='messages/create' method='post'/>
-					<input type='text' name='content' placeholder='comment'/>
-					<input class='bg-cyan' type='submit' value='Submit' />
-				</form>
+	<% @allposts.each do |post| %>
+		<div class='c12 eachpost'>
+			<p class='info'><%= post.user.username %> | <%= post.created_at %></p>
+			<p class='title'><%= post.title %></p>
+			<p class='content'><%= post.content %></p>
+			<div class='c10 o1 comments margin-top'>
+				<h3>Comments</h3>
+				<% 	post.comments.each do |comment| %>
+				<div class='comment'>
+					<div class='top-left'>
+						<img src="https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/user_male2-128.png">
+					</div>
+					<div class='top-right'>
+						<p class='username'><%= comment.user.username %></p>
+						<p class='commentdate'>	<%= comment.created_at %></p>
+					</div>
+					<p class='message'><%= comment.message %></p>
+				</div>
+				<% end %>
 			</div>
+			<form class='form-comment' action='/comments/create/<%= post.id %>' method='post'>
+				<input type='text' name='newcomment[message]' placeholder='comment'/>
+				<input type='submit' value='Submit' />
+				<%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
+			</form>
 		</div>
-	</div>
 	<% end %>
-</div>
 <div class='row'>
 	<div class='bottom c12 bg-grainy-gray'>
 	</div>	
-</div>	
+</div>
