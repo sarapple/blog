@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   post 'comments/create/:id' => 'comments#create'
 
   get 'posts/index'
+  get 'posts/show'
   post 'posts/create'
 
   get 'users/main'

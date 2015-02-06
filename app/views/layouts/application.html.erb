@@ -22,10 +22,11 @@ $(document).ready(function(){
 });
 </script>
 <% end %>
+<%= yield :jquery_code %>
 </head>
 <body>
 
-<%= yield :jquery_code %>
+
 <%= yield %>
 
 </body>

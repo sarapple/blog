@@ -12,27 +12,27 @@ $(document).ready(function(){
 });
 </script>
 <% end %>
+<%= yield :jquery_code %>
 </head>
 <body>
 	<div class='container'>
 		<div class='row'>
-			<div class='c12'>
-				<h2 class='bg-grainy-gray color-white text-center'><%= session[:username]%></h2>
+			<div class='c12 header-name'>
+				<h2 class='bg-color-darkgray color-white text-center'><%= session[:username]%></h2>
 			</div>
 		</div>
 		<div class='row'>
 			<div class='c12 header-nav'>
 				<div class='c10'>
-					<button class='allPosts'>All posts</button>
-					<button class='myPosts'>My Feed</button>
+					<a href='/posts/index' class='allPosts'>All posts</a>
+					<a href='/posts/show' class='myPosts'>My Feed</a>
 				</div>
 				<div class='c2'>
 					<a href='logout'>Log Out</a>
 				</div>
 			</div>
 		</div>
-<%= yield :jquery_code %>
-<%= yield %>
+		<%= yield %>
 	</div>
 </body>
 </html>

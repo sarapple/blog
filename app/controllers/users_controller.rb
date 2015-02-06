@@ -20,6 +20,9 @@ class UsersController < ApplicationController
 			session[:id] = result.id
 			session[:username] = result.username
 			redirect_to "/posts/index"
+		else
+			flash[:errors] = [["Error:", ["Login authentication failed. Please try again"]]]
+			redirect_to "/"			
 		end
 	end
 	def reg_params

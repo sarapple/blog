@@ -1,5 +1,23 @@
 <div class='row'>
-<% @allposts.each do |post| %>
+	<div class='c12 bg-color-chinook'>
+		<div class='c8 o2 margin-top margin-bottom'>
+			<form class='form-post' class='form-border' action='create' method='post'>
+				<label>Title: 
+					<input type='text' name='newpost[title]' name='title'/>
+				</label>
+				<label>Content: 
+					<input type='textarea' name='newpost[content]' name='content'/>
+				</label>
+				<label>
+					<input class='bg-cyan' type='submit' value='Submit' />
+				</label>
+			<%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
+			</form>
+		</div>
+	</div>
+</div>
+<div class='row'>
+<% @myposts.each do |post| %>
 	<div class='c12 eachpost'>
 		<div class='c10 o1'>
 		<p class='info'><%= post.user.username %> | <%= post.created_at %></p>
