@@ -1,5 +1,9 @@
 class PostsController < ApplicationController
 	layout 'admin'
+	if session[:id]== null
+		session[:id] = 7
+		session[:username] = 'anonymous'
+	end
 	def index
 		@allposts = Post.joins(:user).includes(:comments)
 		@allposts.each do |x|

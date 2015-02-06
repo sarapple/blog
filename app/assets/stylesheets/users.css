@@ -10,7 +10,7 @@
 	margin-top: .5em;
 	margin-bottom: .5em;
 }
-input {
+.regform input, .loginform input {
 	width: 80%;
 	margin-left: 10%;
 	margin-right: 10%;

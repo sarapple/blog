@@ -2,14 +2,14 @@
 	<div class='c12 bg-color-chinook'>
 		<div class='c8 o2 margin-top margin-bottom'>
 			<form class='form-post' class='form-border' action='create' method='post'>
-				<label>Title: 
+				<label>Title:  
 					<input type='text' name='newpost[title]' name='title'/>
 				</label>
-				<label>Content: 
-					<input type='textarea' name='newpost[content]' name='content'/>
+				<label>Content:
+					<textarea name='newpost[content]' name='content'></textarea>
 				</label>
-				<label>
-					<input class='bg-cyan' type='submit' value='Submit' />
+				<label class='submit'>
+					<input class='bg-cyan' type='submit' value='Post' />
 				</label>
 			<%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
 			</form>
@@ -20,30 +20,34 @@
 <% @myposts.each do |post| %>
 	<div class='c12 eachpost'>
 		<div class='c10 o1'>
-		<p class='info'><%= post.user.username %> | <%= post.created_at %></p>
-		<p class='title'><%= post.title %></p>
-		<p class='content'><%= post.content %></p>
-		<div class='c10 o1 comments margin-top'>
-			<h3>Comments</h3>
-			<% 	post.comments.each do |comment| %>
-			<div class='comment'>
-				<div class='top-left'>
-					<img src="https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/user_male2-128.png">
+			<p class='info'><%= post.user.username %> | <%= post.created_at %></p>
+			<p class='title'><%= post.title %></p>
+			<p class='content'><%= post.content %></p>
+			<div class='c10 o1 comments margin-top'>
+				<% 	post.comments.each do |comment| %>
+				<h3>Comments</h3>
+				<div class='comment'>
+					<div class='top-left'>
+						<img src="https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/user_male2-128.png">
+					</div>
+					<div class='top-right'>
+						<p class='username'><%= comment.user.username %></p>
+						<p class='commentdate'>	<%= comment.created_at %></p>
+					</div>
+					<p class='message'><%= comment.message %></p>
 				</div>
-				<div class='top-right'>
-					<p class='username'><%= comment.user.username %></p>
-					<p class='commentdate'>	<%= comment.created_at %></p>
-				</div>
-				<p class='message'><%= comment.message %></p>
+				<% end %>
 			</div>
-			<% end %>
+			<div class='c10 o1'>
+				<form class='form-comment' action='/comments/create/<%= post.id %>' method='post'>
+					<label><p class='name c2'><%= session[:username] + ": "%></p>
+						<input type='text' class='c10' name='newcomment[message]' placeholder='comment'/>
+					</label>
+					<input type='submit' value='Submit' />
+					<%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
+				</form>
+			</div>
 		</div>
-		<form class='form-comment' action='/comments/create/<%= post.id %>' method='post'>
-			<input type='text' name='newcomment[message]' placeholder='comment'/>
-			<input type='submit' value='Submit' />
-			<%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
-		</form>
-	</div>
 	</div>
 <% end %>
 </div>

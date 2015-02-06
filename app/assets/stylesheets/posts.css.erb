@@ -1,41 +1,14 @@
-.bottom {
-	min-height: 3em;
-}
-.bg-grainy-gray {
-	background-image: url('<%= asset_path("grayish.jpg") %> ');
-	background-repeat: no-repeat;
-	opacity: 0.7;
-}
-.form-post {
-	border-radius: 1em;
-}
-input[type="textarea"]{
-	height: 12em;
-}
-input[type="submit"]{
-	background-color: RGB(66, 152, 181);
-}
-.form-border {
-	border: 1px solid black;
-}
-.bg-color-chinook {
-/*	background-color: RGB(74, 170, 165);*/
-/*	background-image: url('<%= asset_path("grayish.jpg") %> ');*/
-}
-.bg-color-darkgray {
-	background-color: RGB(53, 64, 79);
-}
-.bg-cyan {
-	background-color: RGB(77, 194, 182);
-}
-.form-post {
-	border: 2px solid gray;
+body {
+	background-image: url('<%= asset_path("poly.jpg") %> ');
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100%;
 }
 .header-name {	
 }
 .header-nav {
-/*	padding-left: 24px;
-	padding-right: 24px;*/
 	color: RGB(91, 91, 91);
 	font-size: 2em;
 	background-color: RGB(238, 238, 238);
@@ -49,9 +22,38 @@ input[type="submit"]{
 	}
 	.header-nav a {
 		color: RGB(91, 91, 91);
-/*		margin-right: 1em;
-		margin-left: 1em;*/
 	}
+.form-post {
+	border: 2px solid gray;
+	border-radius: 1em;
+}
+	.form-post textarea{
+		width: 100%;
+		max-width: 100%;
+		margin: auto;
+		height: 12em;
+	}
+	.form-post input[type="text"]{
+		width: 100%;
+	}
+	.form-post .submit {
+		text-align: right;
+	}
+	.form-post input[type="submit"]{
+		padding: .5em 2em .5em 2em;
+		background-color: RGB(66, 152, 181);
+	}
+.bg-grainy-gray {
+	background-image: url('<%= asset_path("grayish.jpg") %> ');
+	background-repeat: no-repeat;
+	opacity: 0.7;
+}
+.bg-color-darkgray {
+	background-color: RGB(53, 64, 79);
+}
+.bg-cyan {
+	background-color: RGB(77, 194, 182);
+}
 .eachpost {
 	margin-top: 1em;
 	margin-bottom: 1em;
@@ -106,20 +108,6 @@ input[type="submit"]{
 			font-size: 2em;
 			color: white;
 		}		
-.form-comment {
-	background: none;
-}
-	.form-comment input[type="submit"]{
-		display: none;
-	}
-body {
-	background-image: url('<%= asset_path("poly.jpg") %> ');
-    background-repeat: no-repeat;
-    background-position: top center;
-    background-attachment: fixed;
-    width: 100%;
-    height: 100%;
-}
 .comments * {
 	color: RGB(53, 64, 79);
 }
@@ -147,3 +135,26 @@ body {
 			padding-bottom: 1em;
 			font-size: 1em;
 		}
+.form-comment {
+	width: 100%;
+	background: none;
+}
+.form-comment label {
+	margin: auto;
+}
+	.form-comment label .name {
+		width: 20%;
+		color: RGB(53, 64, 79);
+		font-size: 2em;
+		display: inline-block;
+	}
+	.form-comment label input {
+		width: 70%;
+		display: inline-block;
+	}
+	.form-comment input[type="submit"]{
+		display: none;
+	}
+.bottom {
+	min-height: 3em;
+}

@@ -152,6 +152,7 @@ form {
 	overflow: hidden;
 }
 	label {
+		vertical-align: top;
 /*		padding: 1em;*/
 		margin-bottom: 1em;
 		margin-left: 2em;
@@ -164,7 +165,19 @@ form {
 		border-radius: .4em;
 		background-color: RGB(245, 245, 245);
 	}
+	textarea {
+		padding-top: .4em;
+		padding-bottom: .4em;
+		border-radius: .4em;
+		background-color: RGB(245, 245, 245);
+		border: 1px solid RGB(128, 128, 128);
+	}
 		input[type="text"]{
+			/*border: 1px solid RGB(204, 204, 204);*/
+			border: 1px solid RGB(128, 128, 128);
+			text-align: center;
+		}
+		input[type="password"]{
 			/*border: 1px solid RGB(204, 204, 204);*/
 			border: 1px solid RGB(128, 128, 128);
 			text-align: center;
